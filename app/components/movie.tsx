@@ -35,7 +35,7 @@ const Movie = () => {
         {loading ? (
           <p>Loading movies...</p>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-7xl mt-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-7xl mt-4">
             {movies.map((movie: any) => (
               <Movie_card
                 key={movie.imdbID}
