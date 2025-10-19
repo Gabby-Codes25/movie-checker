@@ -27,31 +27,28 @@ const Movie = () => {
     }, [])
 
     return (
-        <div>
-            <div className='w-full bg-gray-400 text-gray-800 flex justify-between px-8 py-6'>
-                <h1 className='text-2xl font-bold'>Movie Checker</h1>
-                <Search onSearch={fetchMovies} />
-            </div>
-
-            {loading ? (
-                <p>Loading movies...</p>
-            ) : (
-                <ul>
-                {movies.map((movie: any) => (
-                  <div className="w-full grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <li key={movie.imdbID}>
-                        <Movie_card 
-                            poster={movie.Poster}
-                            title={movie.Title}
-                            year={movie.Year}
-                        />
-                    </li>
-                  </div>
-                ))}
-                </ul>
-            )}
-        </div>
-    )
+    <div className="w-full bg-gray-400 text-gray-800 flex justify-between px-8 py-6">
+      <div className="w-full flex flex-col items-center">
+        <h1 className="text-2xl font-bold">Movie Checker</h1>
+        <Search onSearch={fetchMovies} />
+        
+        {loading ? (
+          <p>Loading movies...</p>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-7xl mt-4">
+            {movies.map((movie: any) => (
+              <Movie_card
+                key={movie.imdbID}
+                poster={movie.Poster}
+                title={movie.Title}
+                year={movie.Year}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default Movie

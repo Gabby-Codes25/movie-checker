@@ -9,22 +9,28 @@ type Movie = {
     year: number,
 };
 
-const movie_card = ({ poster, title, year, } : Movie) => {
+const movie_card = ({ poster, title, year }: Movie) => {
   return (
-    <div>
-        <div className='rounded-lg p-4 m-4 shadow-lg font-bold text-gray-300'>
-          {
-            poster !== "N/A" 
-            ? 
-            <img src={poster} alt={title} className="w-full h-auto mb-4 rounded-lg bg-cover" /> 
-            : 
-            <div className='w-full h-64 bg-gray-200 flex items-center justify-center mb-4 rounded-lg'>No Image Available</div>
-          }
-          <h2>Title: {title}</h2>
-          <p>Year produced: {year}</p>
+    <div className="w-[300px] bg-gray-300 text-gray-900 p-4 rounded-lg shadow-md flex flex-col items-center">
+      {poster !== "N/A" ? (
+        <img
+          src={poster}
+          alt={title}
+          className="w-full h-48 sm:h-56 md:h-64 object-fill mb-2 overflow-hidden rounded-lg bg-gray-800"
+        />
+      ) : (
+        <div className="w-full h-48 sm:h-56 md:h-64 bg-gray-200 flex items-center justify-center mb-2 rounded-lg text-gray-600">
+          No Image Available
         </div>
+      )}
+      <h2 className="text-lg md:text-xl text-center mb-2 break-words">
+        {title}
+      </h2>
+      <p className="text-sm md:text-base text-center">
+        Year produced: {year}
+      </p>
     </div>
-  )
-}
+  );
+};
 
 export default movie_card
