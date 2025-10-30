@@ -17,7 +17,7 @@ const movie_card = ({ poster, title, year }: Movie) => {
           <img
             src={poster}
             alt={title}
-            className="w-full h-48 sm:h-56 md:h-64 object-fill mb-2 overflow-hidden rounded-lg bg-gray-800"
+            className="w-full object-cover mb-2 overflow-hidden rounded-lg"
           />
         ) : (
           <div className="w-full h-48 sm:h-56 md:h-64 bg-gray-200 flex items-center justify-center mb-2 rounded-lg text-gray-600">
