@@ -28,8 +28,8 @@ const Movie = () => {
 
     return (
     <div className="">
-      <div className="w-full flex py-7 px-14 justify-between">
-        <h1 className="text-2xl font-bold font-sans">Movie Checker</h1>
+      <div className="w-full flex py-3 md:py-7 px-3 md:px-14 items-center justify-between">
+        <h1 className="md:text-2xl text-l font-bold font-sans">Movie Checker</h1>
         <Search onSearch={fetchMovies} />
       </div>
         
