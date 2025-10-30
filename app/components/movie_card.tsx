@@ -11,7 +11,7 @@ type Movie = {
 
 const movie_card = ({ poster, title, year }: Movie) => {
   return (
-    <div className='w-full'>
+    <div className='w-full max-w-xs mx-auto'>
       <div className="w-[300px] bg-gray-300 text-gray-900 p-4 rounded-lg shadow-md flex flex-col items-center">
         {poster !== "N/A" ? (
           <img

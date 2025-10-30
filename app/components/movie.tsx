@@ -27,15 +27,16 @@ const Movie = () => {
     }, [])
 
     return (
-    <div className="w-full bg-gray-400 text-gray-800 flex justify-between px-8 py-6">
-      <div className="w-full flex flex-col items-center">
-        <h1 className="text-2xl font-bold">Movie Checker</h1>
+    <div className="">
+      <div className="w-full flex py-7 px-14 justify-between">
+        <h1 className="text-2xl font-bold font-sans">Movie Checker</h1>
         <Search onSearch={fetchMovies} />
+      </div>
         
         {loading ? (
           <p>Loading movies...</p>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-7xl mt-4">
+          <div className="w-full flex flex-wrap gap-4 px-4 py-4">
             {movies.map((movie: any) => (
               <Movie_card
                 key={movie.imdbID}
@@ -46,7 +47,6 @@ const Movie = () => {
             ))}
           </div>
         )}
-      </div>
     </div>
   );
 }
